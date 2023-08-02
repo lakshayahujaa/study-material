@@ -1,0 +1,762 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 50px;
+    scroll-behavior: smooth;
+  }
+  /* .wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    z-index: 0;
+  
+    animation-name: diss;
+    animation-duration: .1s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-duration: 7s;
+  }
+  .items{
+    margin-left: 15%;
+    width: 30%; 
+    height: 5%;
+    scale: .2;
+    height: 200px;
+    width: 200px;
+  
+    animation-name: load;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+  }
+  .lg{
+    bottom: 20% ;
+    margin-right: 10%;
+    margin-bottom: 10%;
+    width: 20%;
+    height: 20%;
+    scale: 0;
+  
+    animation-name: stay;
+    animation-duration: 5s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+  
+    animation-name: scale-up;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+  }
+  @keyframes load {
+    0%{
+        width: 200px;
+        background-color: red;
+    }
+    20%{
+        width: 25%;
+        background-color: orange;
+    }
+    40%{
+        width: 50%;
+        background-color: yellow;
+    }
+    80%{
+        width: 75%;
+        background-color: yellowgreen;
+    }
+    95%{
+        width: 100%;
+        background-color: green;
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+  }
+  @keyframes scale-up {
+    0%{
+    scale: .3;
+    opacity: 100%;
+    }
+    50%{
+        scale: .6;
+        opacity: 100%;
+        margin-right: 30%;
+        margin-bottom: 20%;
+    }
+    100%{
+        scale: .8;
+        opacity: 0%;
+        margin-right: 50%;
+        margin-bottom: 30%;
+    }
+  
+  }
+  @keyframes diss {
+    0%{
+        background-color: black;
+        opacity: 100%;
+        width: 100vw;
+        height: 100vh;
+        z-index: 4;
+    }
+    99%{
+        background-color: black;
+        opacity: 100%;
+        width: 100vw;
+        height: 100vh;
+        z-index: 4;
+    }
+    100%{
+        opacity: 0%;
+        width: 0vw;
+        height: 0vh;
+        z-index: -2;
+    }
+  }
+  @keyframes stay {
+    0%{
+        scale: 0.3;
+        opacity: 100%;
+    }
+    100%{
+        scale: 0.3;
+        opacity: 100%;
+    }
+  } */
+  .container {
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 10px;
+    background-color: #1c2130;
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-rows: 10% 80% 10%;
+    grid-template-columns: 10% 75% 15%;
+  
+    grid-template-areas:
+      "hd hd hd"
+      "sd main main"
+      "sd ft ft";
+      z-index: 2;
+  }
+  #header {
+    /* background-image: linear-gradient(to right, black, white, black,black,black,black, black); */
+    background-color: #363c50; 
+    grid-area: hd;
+    display: grid;
+    grid-template-rows: 40%;
+    grid-template-columns: 5% 50% 45%;
+    grid-gap: 8%;
+  
+    grid-template-areas: "logo caption logout";
+    justify-content: left;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  .boxhd {
+    border: 2px solid white;
+    background-color: grey;
+    border-radius: 10px;
+    font-size: 18px;
+    padding: 9%;
+  }
+  #logo {
+    grid-area: logo;
+    padding: 0%;
+    background-color: #363c50;
+    border: 2px solid #363c50;
+    margin-left: 50%;
+  }
+  #caption{
+    grid-area: caption;
+    padding: 0%;
+    background-color: #363c50;
+    border: 2px solid #363c50;
+    text-align: left;
+    color: white;
+    font-size: 60px;
+  
+  }
+  #logout{
+    grid-area: logout;
+    background: gray;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    font-size: 140%;
+    scale: .30;
+    margin-right: 50%;
+  }
+  /* #mat {
+    grid-area: mat;
+    position: relative;
+    z-index: 0;
+  }
+  #mat::before{
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaley(0);
+    transform-origin: top;
+    transition: all 1s;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #mat:hover::before{
+    transform: scaleY(1);
+  }
+  #tt {
+    grid-area: tt;
+    position: relative;
+    z-index: 0;
+  }
+  #tt::before{
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 1s;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #tt:hover::before{
+    transform: scaleY(1);
+  }
+  #ass {
+    grid-area: ass;
+    position: relative;
+    z-index: 0;
+  }
+  #ass::before{
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: all 1s;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #ass:hover::before{
+    transform: scaleY(1);
+  } */
+  #sidebar {
+    /*background-image: linear-gradient(to bottom, black,black, black, black, black,grey,grey,#d4d4d4,grey,grey,black,black,black);*/
+    background-color: #363c50;
+    margin-top: 5%;
+    grid-area: sd;
+    display: grid;
+    grid-template-rows: repeat(3, 10%);
+    grid-template-columns: 80%;
+  
+    grid-template-areas:
+  /*     "course" */
+      "bca"
+      "bba"
+      "mlt";
+    grid-gap: 10%;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+  }
+  .boxsd {
+    border: 2px solid white;
+    background-color: grey;
+    border-radius: 10px;
+    font-size: 15px;
+    color: white;
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .sd-bca-yr{
+    border: 2px solid white;
+    color: white;
+    background-color: grey;
+    font-size: 20px;
+    border-radius: 10px;
+  }
+  #bca1{
+    background-color: #1c2130;
+  }
+  /* #course {
+    grid-area: course;
+    border: 2px solid white;
+    position: relative;
+    z-index: 0;
+  } */
+  #bca {
+    grid-area: bca;
+    position: relative;
+    z-index: 0;
+    background-color: white;
+    color: black;
+  }
+  #bca:hover{
+    color: black;
+  }
+  #bba {
+    grid-area: bba;
+    position: relative;
+    z-index: 0;
+  }
+  #bba:hover{
+    color: black;
+  }
+  #mlt {
+    grid-area: mlt;
+    position: relative;
+    z-index: 0;
+  }
+  #mlt:hover{
+    color: black;
+  }
+  /* #course::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform-origin: left;
+    transition: all 1s;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #course:hover::before {
+    transform: scalex(1);
+  } */
+  #bca::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform-origin: left;
+    transition: all 1s;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #bca:hover::before {
+    transform: scaleX(1);
+  }
+  #bba::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform-origin: left;
+    transition: all 1s;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #bba:hover::before {
+    transform: scalex(1);
+  }
+  #mlt::before {
+    content: "";
+    background-color: white;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform-origin: left;
+    transition: all 1s;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #mlt:hover::before {
+    transform: scalex(1);
+  }
+  #main {
+    grid-area: main;
+    display: grid;
+    grid-template-rows: 50% 50%;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-areas:
+      "syl note ass1"
+      "aca tt1 mat1";
+    gap: 2%;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .boxmain {
+    margin-top: 5%;
+    border-radius: 20px;
+    background-color: #363c50;
+    font-size: 25px;
+    padding: 10%;
+    height: 100%;
+    padding-top: 30%;
+    padding-bottom: 30%;
+    color: white;
+  } 
+  #Syl {
+    grid-area: syl;
+    border: 2px solid yellow;
+    color: white;
+    position: relative;
+    z-index: 0;
+  }
+  #Syl:hover {
+    color: black;
+  }
+  #Syl::before {
+    content: "";
+    background-color: #fefe90;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #Syl:hover::before {
+    transform: scalex(1);
+    transform: scaleY(1);
+    color: black;
+  }
+  #Note {
+    grid-area: note;
+    border: 2px solid blue;
+    position: relative;
+    z-index: 0;
+  }
+  #Note:hover {
+    color: black;
+  }
+  #Note::before {
+    content: "";
+    background-color: rgb(115, 173, 255);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #Note:hover::before {
+    transform: scalex(1);
+    transform: scaleY(1);
+    color: black;
+  }
+  #Ass1 {
+    grid-area: ass1;
+    border: 2px solid red;
+    position: relative;
+    z-index: 0;
+  }
+  #Ass1:hover {
+    color: black;
+  }
+  #Ass1::before {
+    content: "";
+    background-color: rgb(242, 108, 108);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #Ass1:hover::before {
+    transform: scalex(1);
+    transform: scaleY(1);
+    color: black;
+  }
+  #aca {
+    grid-area: aca;
+    border: 2px solid orange;
+    position: relative;
+    z-index: 0;
+  }
+  #aca:hover {
+    color: black;
+  }
+  #aca::before {
+    content: "";
+    background-color: rgb(248, 206, 129);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #aca:hover::before {
+    transform: scalex(1);
+    transform: scaleY(1);
+    color: black;
+  }
+  #tt1 {
+    grid-area: tt1;
+    border: 2px solid violet;
+    position: relative;
+    z-index: 0;
+  }
+  #tt1:hover {
+    color: black;
+  }
+  #tt1::before {
+    content: "";
+    background-color: rgb(255, 141, 255);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #tt1:hover::before {
+    transform: scalex(1);
+    transform: scaleY(1);
+    color: black;
+  }
+  #mat1 {
+    grid-area: mat1;
+    border: 2px solid rgb(0, 255, 0);
+    position: relative;
+    z-index: 0;
+  }
+  #mat1:hover {
+    color: black;
+  }
+  #mat1::before {
+    content: "";
+    background-color: rgb(155, 255, 155);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #mat1:hover::before {
+    transform: scalex(1);
+    transform: scaleY(1);
+    color: black;
+  }
+  #exmsch{
+      /* grid-area: exmsch; */
+      border: 2px solid brown;
+      position: relative;
+      z-index: 0;
+  }
+  #exmsch:hover {
+    color: black;
+  }
+  #exmsch::before {
+    content: "";
+    background-color: rgb(139, 53, 53);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #exmsch:hover::before {
+    transform: scalex(1);
+    transform: scaleY(1);
+    color: black;
+  }
+  #prpl{
+    border: 2px solid lime;
+      position: relative;
+      z-index: 0;
+  }
+  #prpl::before {
+    content: "";
+    background-color: rgb(81, 185, 81);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: scalex(0);
+    transform: scaleY(0);
+    transform-origin: center;
+    transition: all 0.5s;
+    transition-timing-function: ease-out;
+    z-index: -1;
+    border-radius: 10px;
+  }
+  #prpl:hover::before {
+    transform: scalex(1);
+    transform: scaleY(1);
+    color: black;
+  }
+  
+  
+  @media (max-width: 700px) {
+    .container {
+      grid-template-columns: 100%;
+      grid-template-rows: 20% 20% 70%;
+      grid-template-areas:
+        "hd"
+        "sd"
+        "main";
+    }
+    .boxsd{
+      padding: 10%;
+      padding-right: 20%;
+      align-self: center;
+    }
+    #sidebar {
+      grid-template-columns: 25% 25% 25%;
+      grid-template-rows: 40% 40%;
+      grid-template-areas:
+        "course course course"
+        "bca bba mlt";
+    }
+    #bca{
+      padding: 5%;
+      padding-left: 2%;
+    padding-right: 2%
+    }
+    #main {
+      grid-template-columns: 100%;
+      grid-template-rows:repeat(6,1fr);
+      grid-template-areas:
+        "syl"
+        "note"
+        "ass1"
+        "aca"
+        "tt1"
+        "mat1";
+    }
+    #header{
+  /*   grid-template-rows: 40% 20%;
+    grid-template-columns: 100%;
+    grid-gap: 8%; */
+    justify-content: center;
+    align-items: center;
+    /* grid-template-areas: 
+    "logo"
+    "caption"; */
+    }
+    #logo{
+      margin-left: 200%;
+      margin-right:50%;
+      margin-bottom: 2%;
+      scale: 100%;
+    }
+    #caption{
+      scale: 40%;
+      margin-left: 5%;
+    }
+    #course{
+      scale: 0;
+    }
+    
+    #bca,#bba,#mlt{
+      margin-bottom: 40%;
+    }
+  }  
+  #footer{
+    margin-bottom: 50%;
+    margin-top: 2%;
+    font-size: large;
+    grid-area: ft;
+    color: white;
+    text-align: center;
+  }
+   #sidebar2{
+    grid-area: sd2;
+     color: white;
+     text-align: center;
+   }
+  
+  figure img{
+  /*   margin-left: 40px; */
+    margin-top: 15px;
+    margin-right: 75px;
+    
+  }
+  
+  a{
+    text-decoration: none;
+    cursor: pointer;
+  }
+  figure{
+    margin-bottom: -3%;
+  }
