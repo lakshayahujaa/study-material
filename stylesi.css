@@ -277,7 +277,7 @@
   grid-area: aca;
   border: 2px solid orange;
   position: relative;
-  font-size: 50%;
+  font-size: 75%;
   z-index: 0;
 }
 #aca:hover {
